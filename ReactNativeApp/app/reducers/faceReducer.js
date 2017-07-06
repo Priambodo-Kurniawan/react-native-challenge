@@ -1,7 +1,7 @@
 const initialState = {
   title: 'Avatar Creator',
   name: 'default',
-  size: 280,
+  size: 250,
   borderRadius: 10,
   type: 'urban',
   components: {

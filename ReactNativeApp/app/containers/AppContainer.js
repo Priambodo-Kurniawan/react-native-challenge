@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as Action from '../actions'
 
 import Avatar from '../components/Avatar'
+import AvatarForm from '../components/AvatarForm'
 import {
   StyleSheet,
   View,
@@ -34,6 +35,7 @@ class AppContainer extends React.Component {
     return (
       <View>
         <Avatar />
+        <AvatarForm />
       </View>
     );
   }

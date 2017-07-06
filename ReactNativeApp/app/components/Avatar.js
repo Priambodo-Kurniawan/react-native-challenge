@@ -13,11 +13,12 @@ const styles = StyleSheet.create({
 
 class Avatar extends Component {
   render() {
-    console.log(this.props.face.name);
     return (
       <View style={{
         alignItems: 'center',
         paddingTop: 20,
+        minHeight: 320,
+        justifyContent: 'center',
       }}>
         <Image
           style={{
@@ -25,8 +26,9 @@ class Avatar extends Component {
             height: this.props.face.size,
             borderRadius: this.props.face.borderRadius,
             margin: 'auto',
+            alignSelf: 'center',
           }}
-          source={{uri: `https://api.adorable.io/avatars/${this.props.face.size}/${this.props.face.name}`}}
+          source={{uri: `https://api.adorable.io/avatars/285/${this.props.face.name}`}}
         />
       </View>
     );
