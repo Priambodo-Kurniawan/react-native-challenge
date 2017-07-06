@@ -10,12 +10,14 @@ import {
   View
 } from 'react-native';
 
-const App = () => (
-  <Provider store={store}>
-    <AppContainer />
-  </Provider>
-)
-
-
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+      <AppContainer />
+      </Provider>
+    )
+  }
+}
 
 AppRegistry.registerComponent('ReactNativeApp', () => App);

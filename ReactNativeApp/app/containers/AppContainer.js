@@ -2,6 +2,8 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Action from '../actions'
+
+import Avatar from '../components/Avatar'
 import {
   StyleSheet,
   View,
@@ -31,9 +33,7 @@ class AppContainer extends React.Component {
   render() {
     return (
       <View>
-        <Text>
-          Test
-        </Text>
+        <Avatar />
       </View>
     );
   }
