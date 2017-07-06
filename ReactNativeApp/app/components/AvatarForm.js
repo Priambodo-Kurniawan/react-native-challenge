@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextInput, Slider, View, Text, StyleSheet } from 'react-native';
+import { TextInput, Slider, View, Text, StyleSheet, Picker } from 'react-native';
 import { connect } from 'react-redux';
 
 import {
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
 
 class AvatarForm extends Component {
   render() {
+    console.log(this.props);
     return (
       <View style={{alignSelf:'center', width: 280}}>
         <Text style={styles.label}>Name</Text>
@@ -41,15 +42,17 @@ class AvatarForm extends Component {
            value={this.props.face.size}
            onValueChange={val => this.props.changeSize(val)}
           />
-        <Text style={styles.label}>Rounded</Text>
-        <Slider
-           style={{ width: 300, marginBottom: 20, marginLeft: -15 }}
-           step={1}
-           minimumValue={0}
-           maximumValue={50}
-           value={this.props.face.borderRadius}
-           onValueChange={val => this.props.changeBorderRadius(val)}
-          />
+        <Picker
+          selectedValue={this.props.face.type}
+          onValueChange={(itemValue) => {
+            console.log(itemValue);
+            this.props.changeType(itemValue)
+          }}>
+          <Picker.Item label="Urban" value="urban" />
+          <Picker.Item label="Male-Pixel" value="male-pixel" />
+          <Picker.Item label="Robo" value="robo" />
+          <Picker.Item label="Female-Pixel" value="female-pixel" />
+        </Picker>
       </View>
     )
   }
