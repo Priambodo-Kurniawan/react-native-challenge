@@ -1,63 +1,21 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import store from './app/store/configureStore';
+import AppContainer from './app/containers/AppContainer'
+
 import {
   AppRegistry,
   StyleSheet,
+  View
 } from 'react-native';
 
-export default class ReactNativeApp extends Component {
-  constructor(){
-    super()
-  }
-  render() {
-    return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <Text>
-            This is Content Section
-          </Text>
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>
+)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
-AppRegistry.registerComponent('ReactNativeApp', () => ReactNativeApp);
+
+AppRegistry.registerComponent('ReactNativeApp', () => App);
